@@ -1,0 +1,18 @@
+[
+    {
+        "id": "tile01",
+        "img": "/assets/images/tile01.jpg"
+    },
+    {
+        "id": "tile02",
+        "img": "/assets/images/tile02.jpg"
+    },
+    {
+        "id": "tile03",
+        "img": "/assets/images/tile03.jpg"
+    },
+    {
+        "id": "tile04",
+        "img": "/assets/images/tile04.jpg"
+    }
+]
