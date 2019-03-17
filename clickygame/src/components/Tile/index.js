@@ -3,7 +3,7 @@ import "./style.css";
 
 const Tile = props => {
     return (
-        <img onClick={props.handleTileClick} src={props.img} alt={props.name}/>
+        <img onClick={() => props.handleTileClick(props.id)} src={props.img} alt={props.name}/>
     )
 };
 

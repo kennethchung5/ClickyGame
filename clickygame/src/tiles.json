@@ -14,5 +14,29 @@
     {
         "id": "tile04",
         "img": "/assets/images/tile04.jpg"
-    }
+    },
+    {
+        "id": "tile05",
+        "img": "/assets/images/tile05.jpg"
+    },
+    {
+        "id": "tile06",
+        "img": "/assets/images/tile06.jpg"
+    },
+    {
+        "id": "tile07",
+        "img": "/assets/images/tile07.jpg"
+    },
+    {
+        "id": "tile08",
+        "img": "/assets/images/tile08.jpg"
+    },
+    {
+        "id": "tile09",
+        "img": "/assets/images/tile09.jpg"
+    },
+    {
+        "id": "tile10",
+        "img": "/assets/images/tile10.jpg"
+    }    
 ]
