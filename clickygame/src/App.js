@@ -13,24 +13,19 @@ class App extends Component {
         score: 0,
         topScore: 0,         
         clickedIDs: [],
+        inPlay: true,
         message: "",
         messageClass: ""
     };
 
 
-    clearCurrentGame = () => {
-        this.setState({
-            score: 0,
-            clickedIDs: []
-        })
-    };
-
     resetGame = () => {
         this.setState({
+            score: 0,
+            clickedIDs: [],
+            inPlay: true,
             message: ""
         });
-
-        this.clearCurrentGame();
     };
 
 
@@ -48,8 +43,8 @@ class App extends Component {
 
 
     handleTileClick = tileID => {        
-        //check if new game
-        if (this.state.score === tiles.length) {
+        //check if inPlay; if not, then start new game
+        if (!this.state.inPlay) {
             this.resetGame();
         } else {
 
@@ -57,11 +52,11 @@ class App extends Component {
             //check if tile already clicked
             if (clicked.indexOf(tileID) >= 0) {
                 this.setState({
-                    message: "That tile was already clicked!",
+                    inPlay: false,
+                    message: "That tile was already clicked!\nClick any tile to start a new game.",
                     messageClass: "test1"
                 })
 
-                this.clearCurrentGame();
             } else {            
                 this.setState({
                     topScore: Math.max(this.state.score + 1, this.state.topScore),
@@ -73,6 +68,7 @@ class App extends Component {
                 //check for win
                 if (clicked.length === tiles.length) {
                     this.setState({
+                        inPlay: false,
                         message: "You win!\nClick any tile to start a new game."                        
                     })
                 } else {

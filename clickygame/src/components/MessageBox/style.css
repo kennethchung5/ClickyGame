@@ -1,7 +1,8 @@
 #message {
-    height: 50px;    
+    height: 100%;    
     border: blue dashed thick;
 
+    white-space: pre-wrap;
     /* animation-name: flash; */
 }
 
