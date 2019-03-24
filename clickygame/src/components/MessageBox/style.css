@@ -2,24 +2,79 @@
     height: 100%;    
     border: blue dashed thick;
 
-    white-space: pre-wrap;
-    /* animation-name: flash; */
+    background-color: aqua;
+    color: white;
+
+    white-space: pre-wrap;    
 }
 
 
-/* .flash {
-    animation-name: flash;
+.redMessage {
+    animation: redden 1s 0s;
+}
+
+@keyframes redden {
+    0%, 100% {
+        color: white;
+    }
+
+    50% {
+        color: red;
+    }
+}
+
+.greenMessage {
+    animation: greenen 1s 0s;
+}
+
+@keyframes greenen {
+    0%, 100% {
+        color: white;
+    }
+
+    50% {
+        color: green;
+    }
+}
+
+/* 
+
+.flash {    
      animation-duration: 0.2s;
      animation-timing-function: linear;
      animation-iteration-count: infinite;
      animation-direction: alternate;
      animation-play-state: running;
- }
+}
+
+.flashRed {
+    animation-name: fRed;
+    animation-duration: 0.2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-play-state: running;
+}
+.flashGreen {
+    animation-name: fGreen;
+    animation-duration: 0.2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-play-state: running;
+}
  
- @keyframes flash {
-     from {color: red;}
-     to {color: black;}
- } */
+@keyframes fRed {
+    from {color: red;}
+    to {color: black;}
+}
+
+@keyframes fGreen {
+    from {color: green;}
+    to {color: black;}
+}
+
+
 
 .test1 {
     color: red;
@@ -29,4 +84,4 @@
 }
 .test3 {
     color: blue;
-}
+} */

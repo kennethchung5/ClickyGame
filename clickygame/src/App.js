@@ -14,8 +14,8 @@ class App extends Component {
         topScore: 0,         
         clickedIDs: [],
         inPlay: true,
-        message: "",
-        messageClass: ""
+        message: "Click any tile to begin!"
+        // messageClass: ""        
     };
 
 
@@ -24,7 +24,7 @@ class App extends Component {
             score: 0,
             clickedIDs: [],
             inPlay: true,
-            message: ""
+            message: "Click any tile to begin!"
         });
     };
 
@@ -54,30 +54,41 @@ class App extends Component {
                 this.setState({
                     inPlay: false,
                     message: "That tile was already clicked!\nClick any tile to start a new game.",
-                    messageClass: "test1"
+                    // messageClass: "redMessage"                    
                 })
 
             } else {            
-                this.setState({
+                // this.setState({
+                //     topScore: Math.max(this.state.score + 1, this.state.topScore),
+                //     score: this.state.score + 1                    
+                // })
+
+                const newState = {
                     topScore: Math.max(this.state.score + 1, this.state.topScore),
-                    score: this.state.score + 1,
-                })
+                    score: this.state.score + 1                    
+                }
 
                 clicked.push(tileID);
 
                 //check for win
-                if (clicked.length === tiles.length) {
-                    this.setState({
-                        inPlay: false,
-                        message: "You win!\nClick any tile to start a new game."                        
-                    })
+                if (clicked.length === tiles.length) {                    
+                    // this.setState({
+                    //     inPlay: false,
+                    //     message: "You win!\nClick any tile to start a new game."                        
+                    // })
+                    newState.inPlay = false;
+                    newState.message = "You win!\nClick any tile to start a new game.";
                 } else {
-                    this.setState({
-                        clickedIDs: clicked,
-                        message: "Correct!",
-                        messageClass: "test2"            
-                    })            
+                    // this.setState({
+                    //     clickedIDs: clicked,
+                    //     message: "Correct!"                        
+                    // })            
+
+                    newState.clickedIDs = clicked;
+                    newState.message = "Correct!";
                 }
+
+                this.setState(newState);
             }
         }
     };
@@ -86,7 +97,7 @@ class App extends Component {
         return (
             <div>
                 <ScoreBox score={this.state.score} topScore={this.state.topScore} resetGame={this.resetGame}/>
-                <MessageBox classign={this.state.messageClass}>{this.state.message}</MessageBox>
+                <MessageBox score={this.state.score}>{this.state.message}</MessageBox>
                 <TileDisplay >
                     {this.reOrder(
                         tiles.map(tile => (
