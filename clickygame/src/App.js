@@ -14,8 +14,7 @@ class App extends Component {
         topScore: 0,         
         clickedIDs: [],
         inPlay: true,
-        message: "Click any tile to begin!"
-        // messageClass: ""        
+        message: "Click any tile to begin!"               
     };
 
 
@@ -53,16 +52,10 @@ class App extends Component {
             if (clicked.indexOf(tileID) >= 0) {
                 this.setState({
                     inPlay: false,
-                    message: "That tile was already clicked!\nClick any tile to start a new game.",
-                    // messageClass: "redMessage"                    
+                    message: "That tile was already clicked!\nClick any tile to start a new game.",                    
                 })
 
             } else {            
-                // this.setState({
-                //     topScore: Math.max(this.state.score + 1, this.state.topScore),
-                //     score: this.state.score + 1                    
-                // })
-
                 const newState = {
                     topScore: Math.max(this.state.score + 1, this.state.topScore),
                     score: this.state.score + 1                    
@@ -72,18 +65,9 @@ class App extends Component {
 
                 //check for win
                 if (clicked.length === tiles.length) {                    
-                    // this.setState({
-                    //     inPlay: false,
-                    //     message: "You win!\nClick any tile to start a new game."                        
-                    // })
                     newState.inPlay = false;
                     newState.message = "You win!\nClick any tile to start a new game.";
                 } else {
-                    // this.setState({
-                    //     clickedIDs: clicked,
-                    //     message: "Correct!"                        
-                    // })            
-
                     newState.clickedIDs = clicked;
                     newState.message = "Correct!";
                 }
@@ -97,7 +81,7 @@ class App extends Component {
         return (
             <div>
                 <ScoreBox score={this.state.score} topScore={this.state.topScore} resetGame={this.resetGame}/>
-                <MessageBox score={this.state.score}>{this.state.message}</MessageBox>
+                <MessageBox score={this.state.score} inPlay={this.state.inPlay}>{this.state.message}</MessageBox>
                 <TileDisplay >
                     {this.reOrder(
                         tiles.map(tile => (

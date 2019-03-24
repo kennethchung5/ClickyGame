@@ -5,12 +5,13 @@
     background-color: aqua;
     color: white;
 
-    white-space: pre-wrap;    
+    white-space: pre-wrap;
+    text-align: center;    
 }
 
 
 .redMessage {
-    animation: redden 1s 0s;
+    animation: redden 1s infinite;
 }
 
 @keyframes redden {
@@ -24,7 +25,7 @@
 }
 
 .greenMessage {
-    animation: greenen 1s 0s;
+    animation: greenen 1s;
 }
 
 @keyframes greenen {
@@ -37,51 +38,3 @@
     }
 }
 
-/* 
-
-.flash {    
-     animation-duration: 0.2s;
-     animation-timing-function: linear;
-     animation-iteration-count: infinite;
-     animation-direction: alternate;
-     animation-play-state: running;
-}
-
-.flashRed {
-    animation-name: fRed;
-    animation-duration: 0.2s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-    animation-play-state: running;
-}
-.flashGreen {
-    animation-name: fGreen;
-    animation-duration: 0.2s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-    animation-play-state: running;
-}
- 
-@keyframes fRed {
-    from {color: red;}
-    to {color: black;}
-}
-
-@keyframes fGreen {
-    from {color: green;}
-    to {color: black;}
-}
-
-
-
-.test1 {
-    color: red;
-}
-.test2 {
-    color: green;
-}
-.test3 {
-    color: blue;
-} */
